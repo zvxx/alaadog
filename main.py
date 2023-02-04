@@ -81,16 +81,6 @@ def start(message):
     kid=requests.post('https://i.instagram.com/api/v1/users/lookup/',headers=head,data=data).json()
     api = f'https://www.instagram.com/{msg}/?__a=1&__d=dis'
     rr=requests.get(api).json()
-    iddd = (profile.userid)
-    nam = (profile.full_name)
-    fol = (profile.followees)
-    fols =(profile.followers)
-    bio = (profile.mediacount)
-    bayo = (profile.biography,profile.external_url)
-    pc = (profile.profile_pic_url)
-    re = requests.get(f"https://o7aa.pythonanywhere.com/?id={iddd}")   
-    ree = re.json()
-    dat = ree['date']
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         'Host': 'i.instagram.com',
@@ -114,6 +104,26 @@ def start(message):
     res=restt.json()
     ress=restt.text
     if 'obfuscated_email' in ress:
+    	fa =str(rq['options']['can_use_facebook'])
+    	if fa =='True':
+    		L3 = 'مــربـوط فـيس بــوك'
+    	else:
+    		L3='غــير مــربـوط فـيس بــوك'
+    	ph = str(rq['options']['can_send_phone'])
+    	if ph =='True':
+    		L5 = ('مــربـوط رقــم')
+    	else:
+    		L5='غــير مــربـوط رقــم'
+    	iddd = (profile.userid)
+    	nam = (profile.full_name)
+    	fol = (profile.followees)
+    	fols =(profile.followers)
+    	bio = (profile.mediacount)
+    	bayo = (profile.biography,profile.external_url)
+    	pc = (profile.profile_pic_url)
+    	re = requests.get(f"https://o7aa.pythonanywhere.com/?id={iddd}")   
+    	ree = re.json()
+    	dat = ree['date']
     	email=res['obfuscated_email']
     	bot.send_photo(message.chat.id,pc,caption=f"""𓊆𝑁𝐸𝑊 𝐼𝑁𝐹𝑂𝑅𝑀𝐴𝑇𝐼𝑂𝑁 𝐴𝐶𝐶𝑂𝑈𝑁𝑇 𝐼𝑁𝑆𝑇𝐴𝐺𝑅𝐴𝑀 𝐵𝑌 𝐿𝐸𝑉𝐼𓊇
 ⋘────━𓆩𝐋 𝐄 𝐕 𝐈𓆪‏━────⋙  
@@ -132,19 +142,6 @@ def start(message):
 𓊆𝑅𝐸𝑆𝑇 𝐼𝑆 𝐷𝑂𝑁𝐸 ✅𓊇
 ❖ - ᗷY : @u_r_r""",parse_mode="html")
    except:
-    Leviiio=f"""𓊆𝑁𝐸𝑊 𝐼𝑁𝐹𝑂𝑅𝑀𝐴𝑇𝐼𝑂𝑁 𝐴𝐶𝐶𝑂𝑈𝑁𝑇 𝐼𝑁𝑆𝑇𝐴𝐺𝑅𝐴𝑀 𝐵𝑌 𝐿𝐸𝑉𝐼𓊇
-⋘────━𓆩𝐋 𝐄 𝐕 𝐈𓆪‏━────⋙  
-❖ - 𝖓𝖆𝖒𝖊 : {nam}
-❖ - 𝖚𝖘𝖊𝖗𝖓𝖆𝖒𝖊 : @{msg}
-❖️ - 𝕴𝕯 : {iddd}
-❖ - 𝖋𝖔𝖑𝖑𝖔𝖜𝖊𝖗 : {fols}
-❖️ - 𝖋𝖔𝖑𝖑𝖔𝖎𝖓𝖌 : {fol} 
-❖ - 𝖉𝖆𝖙𝖆 𝖆𝖈𝖈𝖔𝖚𝖓𝖙 : {dat}
-❖ - 𝖕𝖔𝖘𝖙𝖘 : {bio}
-❖ - 𝕹𝖚𝖒𝖇𝖊𝖗 : {L5}
-❖ - 𝖋𝖆𝖈𝖊𝖇𝖔𝖔𝖐 : {L3}
-❖ - 𝕷𝖎𝖓𝖐 : https://www.instagram.com/{msg}
-⋘────━𓆩𝐋 𝐄 𝐕 𝐈𓆪‏━────⋙ 
-❖ - ᗷY : @u_r_r"""
-    bot.send_message(message.chat.id, f"{Leviiio}")
+    Leviiio=f"""UserName Error"""
+    bot.send_message(message.chat.id, f"{Leviiio}"))
 bot.polling(True)
