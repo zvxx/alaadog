@@ -1,14 +1,4 @@
-APScheduler==3.6.3
 
-marshal
-
-bs4
-
-instaloader
-
-OneClick
-
-stdiomask
 
 cachetools==4.2.2
 
