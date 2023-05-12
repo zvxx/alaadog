@@ -2,7 +2,8 @@ import os , random , time
 
 try:
 
-	import requests , telebot 	from telebot import types 
+	import requests , telebot 	
+	from telebot import types 
 
 except ModuleNotFoundError:
 
